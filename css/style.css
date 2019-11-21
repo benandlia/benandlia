@@ -7,7 +7,25 @@
  	grid-template-rows: repeat(7, auto);
  	grid-column-gap: 20px;
  	grid-row-gap: 20px;
+ 	font-family: 'Fira Sans', Sans-Serif;
+ 	font-size: 18px;
+ 	background: #f8f8f4;
  }
+
+ h1, h2, h3, h4 {
+ 	font-family: 'Cormorant Garamond', Serif;
+ }
+
+ h1 {
+
+ }
+
+ h2 {
+    font-size: 3rem;
+    line-height: 3rem;
+    margin: 0;
+    text-transform: lowercase;
+}
 
 header {
     grid-column-start: 2;
@@ -24,6 +42,8 @@ main {
  	grid-template-rows: repeat(7, auto);
  	grid-column-gap: 20px;
  	grid-row-gap: 20px;
+ 	max-width: 1400px;
+    margin: 0 auto;
 }
 
 #top, 
@@ -40,6 +60,28 @@ footer {
     grid-column-start: 2;
     grid-column-end: 4;
     border: solid blue;
+}
+
+/*section {
+    border: dashed 1px #d4d4d4;
+}*/
+
+.svg-before {
+    position: absolute;
+    left: -10%;
+    top: -10%;
+    width: 15%;
+    height: 100%;
+    z-index: -1;
+}
+
+.svg-after {
+    position: absolute;
+    bottom: -10%;
+    right: -13%;
+    width: 32%;
+    transform: scaleX(-1) rotate(-35deg);
+    z-index: -1;
 }
 
 /* ==========================================================================
@@ -75,11 +117,38 @@ nav ul li {
  	grid-template-rows: 1fr;
  	grid-column-gap: 20px;
  	grid-row-gap: 20px;
+ 	position: relative;
 }
 
-.history {
+.history--n {
     grid-column-start: 1;
     grid-column-end: 3;
+    background: white;
+    padding: 2rem;
+    border: solid 3px #debe70;
+    position: relative;
+    box-shadow: 0px 4px 10px rgba(53, 39, 41, 0.26);
+}
+
+.list {
+    position: relative;
+    background: white;
+    border: solid 3px;
+    padding: 2rem;
+}
+
+.after-list {
+    position: absolute;
+    right: -50%;
+    top: 10%;
+    width: 40%;
+    padding: 5%;
+    background: linear-gradient(45deg, rgba(231, 200, 209, .75), rgb(211, 139, 159));
+    z-index: -1;
+    font-family: 'Cormorant Garamond', Serif;
+    font-size: 1.75rem;
+    line-height: 1.75rem;
+    color: #fff;
 }
 
 .weather {
@@ -97,4 +166,112 @@ nav ul li {
  	grid-template-rows: 1fr;
  	grid-column-gap: 20px;
  	grid-row-gap: 20px;
+}
+
+.welcome-dinner, 
+.ceremony, 
+.reception {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 10%;
+}
+
+.left {
+    width: 48%;
+    margin-right: 2%;
+    position: relative;
+}
+
+.left::after {
+	content: '';
+	position: absolute;
+	right: -4%;
+	top: 0;
+	height: 100%;
+	width: 3px;
+	background: red;
+}
+
+.right {
+    width: 48%;
+    margin-left: 2%;
+}
+
+/* ==========================================================================
+	ACCORDIONS
+	========================================================================== */
+.accordion {
+    padding: 0 0 0 2rem;
+    margin-top: 0;
+}
+
+
+.accordion dt::before, 
+.accordion dt::after {
+  content: '';
+  position: absolute;
+  left: -1.25rem;
+  top: calc(50% - 5px);
+  height: 10px;
+  width: 3px;
+  background: #3b9dc0 ;
+  transition: all .25s ease;
+}
+ 
+.accordion dt::after {
+    transform: rotate(90deg);
+}
+
+.accordion dt.open::before {
+  height: 0;
+}
+
+.accordion dt a {
+  display: block;
+  color: initial;
+  text-decoration: none;
+}
+
+.accordion dt .accord-button {
+    display: block;
+    width: 50px;
+    height: 100%;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+
+.accordion dt .accord-button:before, 
+.accordion dt .accord-button:after {
+    content: "";
+    position: absolute;
+    width: 3px;
+    height: 9px;
+    transition: all .25s linear;
+}
+
+.accordion dt .accord-button:before {
+    transform: translate(-2px, 0) rotate(180deg);
+    left: calc(50% - -0.5px);
+    top: calc(50% - 4.5px);
+}
+
+.accordion dt .accord-button.rotate:before {
+    height: 0;
+}
+
+.accordion dt .accord-button:after {
+    transform: translate(2px, 0) rotate(90deg);
+    left: calc(50% - 3.5px);
+    top: calc(50% - 4.5px);
+}
+
+.accordion dd {
+  border-top: 0;
+  padding: 1rem 0;
+  margin: 0;
+  display: none;
 }
