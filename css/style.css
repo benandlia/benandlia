@@ -1,0 +1,100 @@
+/* ==========================================================================
+   GRID
+   ========================================================================== */
+ body {
+ 	display: grid;
+ 	grid-template-columns: 10% repeat(2, 1fr) 10%;
+ 	grid-template-rows: repeat(7, auto);
+ 	grid-column-gap: 20px;
+ 	grid-row-gap: 20px;
+ }
+
+header {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    border: solid red;
+}
+
+main {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    border: solid green;
+    display: grid;
+ 	grid-template-columns: 10% repeat(2, 1fr) 10%;
+ 	grid-template-rows: repeat(7, auto);
+ 	grid-column-gap: 20px;
+ 	grid-row-gap: 20px;
+}
+
+#top, 
+#charleston,
+#event,
+#registry,
+#faqs,
+#rsvp {
+    grid-column-start: 2;
+    grid-column-end: 4;
+}
+
+footer {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    border: solid blue;
+}
+
+/* ==========================================================================
+   HEADER
+   ========================================================================== */
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+
+/* ==========================================================================
+   TOP
+   ========================================================================== */
+#top {
+    text-align: center;
+}
+
+/* ==========================================================================
+	CHARLESTON
+	========================================================================== */
+#charleston {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+ 	grid-template-rows: 1fr;
+ 	grid-column-gap: 20px;
+ 	grid-row-gap: 20px;
+}
+
+.history {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.weather {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    text-align: center;
+}
+
+/* ==========================================================================
+	EVENT
+	========================================================================== */
+#event {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+ 	grid-template-rows: 1fr;
+ 	grid-column-gap: 20px;
+ 	grid-row-gap: 20px;
+}
