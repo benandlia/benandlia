@@ -60,5 +60,25 @@ $( document ).ready(function() {
     }
   });
 
+  //coutndown
+  function makeTimer() {
+
+    var endTime = new Date("23 February 2020 5:00:00 GMT+01:00");      
+      endTime = (Date.parse(endTime) / 1000);
+
+      var now = new Date();
+      now = (Date.parse(now) / 1000);
+
+      var timeLeft = endTime - now;
+
+      var days = Math.floor(timeLeft / 86400); 
+  
+
+      $("#days").html(days);
+
+  }
+
+  setInterval(function() { makeTimer(); }, 10);
+
     
 });//end doc ready

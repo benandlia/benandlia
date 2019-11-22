@@ -36,7 +36,7 @@ header {
 main {
     grid-column-start: 1;
     grid-column-end: 5;
-    border: solid green;
+    /*border: solid green;*/
     display: grid;
  	grid-template-columns: 10% repeat(2, 1fr) 10%;
  	grid-template-rows: repeat(7, auto);
@@ -108,6 +108,31 @@ nav ul li {
     text-align: center;
 }
 
+.countdown {
+    background-image: url(../assets/border-1.svg);
+    width: 250px;
+    height: 250px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    margin: -20px auto 0;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.number {
+    font-size: 4em;
+    font-family: 'Cormorant Garamond', Serif;
+    text-align: center;
+    line-height: 1em;
+    margin-top: -2rem;
+}
+
+img.logo {
+    margin-top: -10%;
+}
+
 /* ==========================================================================
 	CHARLESTON
 	========================================================================== */
@@ -130,31 +155,64 @@ nav ul li {
     box-shadow: 0px 4px 10px rgba(53, 39, 41, 0.26);
 }
 
+.to-do {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
 .list {
     position: relative;
     background: white;
-    border: solid 3px;
+    border: solid 3px #debe70;
     padding: 2rem;
+    width: 60%;
+    margin: 5rem 0;
 }
 
 .after-list {
     position: absolute;
-    right: -50%;
+    right: -44%;
     top: 10%;
     width: 40%;
-    padding: 5%;
-    background: linear-gradient(45deg, rgba(231, 200, 209, .75), rgb(211, 139, 159));
-    z-index: -1;
+    padding: 6% 2% 6% 7%;
+    /*background: linear-gradient(45deg, rgba(231, 200, 209, .75), rgb(211, 139, 159));*/
+    z-index: 2;
     font-family: 'Cormorant Garamond', Serif;
     font-size: 1.75rem;
     line-height: 1.75rem;
-    color: #fff;
+    color: #222;
+    background-image: url(../assets/stroke.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.list.eat {
+    margin-left: 40%;
+}
+
+.list.eat .after-list {
+    right: auto;
+    left: -50%;
 }
 
 .weather {
     grid-column-start: 1;
     grid-column-end: 3;
     text-align: center;
+    position: relative;
+    padding: 5rem;
+    margin: 5rem 0 1rem;
+}
+
+.weather::after {
+    content: '';
+    position: absolute;
+    left: -100vw;
+    width: 200vw;
+    top: 0;
+    height: 100%;
+    background: #debf72;
+    z-index: -1;
 }
 
 /* ==========================================================================
