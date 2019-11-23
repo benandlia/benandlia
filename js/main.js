@@ -77,8 +77,8 @@ $( document ).ready(function() {
       $("#days").html(days);
 
   }
-
-  setInterval(function() { makeTimer(); }, 10);
+makeTimer();
+ // setInterval(function() { makeTimer(); }, 1000);
 
     
 });//end doc ready
