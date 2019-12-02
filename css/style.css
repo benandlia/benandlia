@@ -4,7 +4,7 @@
  body {
  	display: grid;
  	grid-template-columns: 10% repeat(2, 1fr) 10%;
- 	grid-template-rows: repeat(7, auto);
+ 	grid-template-rows: auto;
  	grid-column-gap: 20px;
  	grid-row-gap: 20px;
  	font-family: 'Fira Sans', Sans-Serif;
@@ -25,6 +25,11 @@
     line-height: 3rem;
     margin: 0;
     text-transform: lowercase;
+}
+
+h3 {
+    margin: 0;
+    font-size: 2em;
 }
 
 header {
@@ -100,13 +105,40 @@ nav ul li {
     margin: 0 1rem;
 }
 
+/* ==========================================================================
+   DIVIDERS
+   ========================================================================== */
+.divider {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    background: black;
+    height: 40vh;
+    position: relative;
+    margin: 0 0 7rem 0;
+}
+
+.divider::after {
+	content: '';
+	position: absolute;
+	left: -100vw;
+	top: 0;width: 200vw;
+	height: 100%;
+	background-position: center;
+	background-size: cover;
+	background-attachment: fixed;
+	filter: grayscale(1);
+}
+
+.divider.church::after {
+    background-image: url(../assets/adam-kring-So5G1h3W3Ro-unsplash.jpg);
+}
 
 /* ==========================================================================
    TOP
    ========================================================================== */
 #top {
     text-align: center;
-    height: 90vh;
+    height: 70vh;
     display: flex;
     flex-direction: column;
     margin-bottom: 7rem;
@@ -127,6 +159,7 @@ nav ul li {
     font-family: 'Cormorant Garamond', Serif;
     font-size: 3rem;
     line-height: 1rem;
+    mix-blend-mode: multiply;
 }
 
 .number {
@@ -146,6 +179,7 @@ img.logo {
     margin-top: -10%;
     flex-grow: 1;
 }
+
 
 /* ==========================================================================
 	CHARLESTON
@@ -169,9 +203,86 @@ img.logo {
     box-shadow: 0px 4px 10px rgba(53, 39, 41, 0.26);
 }
 
+.weather {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    text-align: center;
+    position: relative;
+    padding: 5rem;
+    margin: 5rem 0 1rem;
+}
+
+.weather::after {
+    content: '';
+    position: absolute;
+    left: -100vw;
+    width: 200vw;
+    top: 0;
+    height: 100%;
+    background: #fff;
+    z-index: -1;
+    border: 3px solid #db7089;
+}
+
+.weather-box {
+    display: flex;
+    justify-content: center;
+}
+
+.avg, 
+.day {
+    width: 44%;
+    padding: 2%;
+    font-family: 'Cormorant Garamond', Serif;
+    font-size: 1.3em;
+    line-height: 1.2em;
+    position: relative;
+}
+
+.avg::after {
+    content: '';
+    width: 3px;
+    height: 50%;
+    background: #debf73;
+    position: absolute;
+    right: 0%;
+    top: 25%;
+}
+
+.avg .temp, 
+.day .temp {
+    font-size: 4em;
+    color: #a14055;
+    line-height: 1em;
+    position: relative;
+}
+
+.avg .temp::after, 
+.day .temp::after {
+    content: '°';
+    position: absolute;
+    right: -.35em;
+    top: 0;
+    font-size: .5em;
+}
+
+.high, 
+.low {
+    display: inline-block;
+    width: 33%;
+}
+
+.degree {
+    margin-left: .5em;
+}
+
 .to-do {
     grid-column-start: 1;
     grid-column-end: 3;
+}
+
+.split {
+    display: flex;
 }
 
 .list {
@@ -181,6 +292,12 @@ img.logo {
     padding: 2rem;
     width: 60%;
     margin: 5rem 0;
+}
+
+.list ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
 .after-list {
@@ -209,26 +326,6 @@ img.logo {
     left: -50%;
 }
 
-.weather {
-    grid-column-start: 1;
-    grid-column-end: 3;
-    text-align: center;
-    position: relative;
-    padding: 5rem;
-    margin: 5rem 0 1rem;
-}
-
-.weather::after {
-    content: '';
-    position: absolute;
-    left: -100vw;
-    width: 200vw;
-    top: 0;
-    height: 100%;
-    background: #fff;
-    z-index: -1;
-    border: 3px solid #db7089;
-}
 
 /* ==========================================================================
 	EVENT
@@ -261,11 +358,11 @@ img.logo {
 .left::after {
 	content: '';
 	position: absolute;
-	right: -4%;
+	right: -0%;
 	top: 0;
 	height: 100%;
 	width: 3px;
-	background: red;
+	background: #db7089;
 }
 
 .right {
