@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond|Fira+Sans&display=swap');
+
 /* ==========================================================================
    GRID
    ========================================================================== */
@@ -20,7 +22,7 @@
  }
 
  h1, h2, h3, h4 {
- 	font-family: 'Cormorant Garamond', Serif;
+ 	font-family: 'Cormorant Garamond', serif;
  }
 
  h1 {
