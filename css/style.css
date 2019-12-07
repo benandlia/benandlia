@@ -1117,7 +1117,9 @@ input[type="submit"]:hover
 	    margin: 0;
 	}
 
-	.left::after {}
+	.left::after {
+		display: none;
+	}
 
 	.right {
 	    margin: 0;
