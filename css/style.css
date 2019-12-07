@@ -1133,6 +1133,7 @@ input[type="submit"]:hover
 	    width: 90%;
 	    bottom: -23%;
 	    height: 25%;
+	    background-position: center;
 	}
 
 	.svg-before.large {
@@ -1161,6 +1162,10 @@ input[type="submit"]:hover
 
 	.cognito legend {
 	    line-height: 2rem;
+	}
+	#rsvp .svg-before.large {
+	    width: 50%;
+	    top: -30%;
 	}
 }
 
