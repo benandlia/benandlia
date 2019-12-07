@@ -81,13 +81,21 @@ $( document ).ready(function() {
  // setInterval(function() { makeTimer(); }, 1000);
 
  //fixed header
- $(window).scroll(function() {    
-    var scroll = $(window).scrollTop();
+  $(window).bind('scroll', function() {
+     var navHeight = $('header').height();
+       if ($(window).scrollTop() > navHeight) {
+         $('header').addClass('fixed');
+       }
+       else {
+         $('header').removeClass('fixed');
+       }
+    });
 
-    if (scroll >= 100) {
-        $("header").addClass("fixed");
-    }
-});
+  //hamburger
+  $('.hamburger').click(function() {
+    $('nav').toggleClass("open");
+    $(this).toggleClass("close");
+  });    
 
     
 });//end doc ready
