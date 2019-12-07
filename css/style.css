@@ -3,6 +3,7 @@
    ========================================================================== */
  html {
  	overflow-x: hidden;
+ 	position: relative;
  }
 
  body {
@@ -14,6 +15,7 @@
  	font-family: 'Fira Sans', Sans-Serif;
  	font-size: 18px;
  	background: #fbfbfb;
+ 	position: absolute;
  }
 
  h1, h2, h3, h4 {
@@ -313,9 +315,15 @@ span.days {
     font-size: 1rem;
 }
 
-img.logo {
+.logo {
     margin-top: -10%;
     flex-grow: 1;
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 100%;
 }
 
 
@@ -450,7 +458,7 @@ img.logo {
     font-size: 1.75rem;
     line-height: 1.75rem;
     color: #222;
-    background-image: url(../assets/stroke.svg);
+    background-image: url(../assets/stroke.png);
     background-size: contain;
     background-repeat: no-repeat;
     display: flex;
@@ -991,6 +999,11 @@ input[type="submit"]:hover
 	}
 	nav.open {
 	    top: 49px;
+	}
+	.divider::after {
+	    background-attachment: inherit;
+	    background-size: cover;
+	    background-position: center center;
 	}
 }
 
