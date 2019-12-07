@@ -128,7 +128,7 @@ a {
     display: inline-block;
 }
 
-a::after {content: '';height: 1px;left: -.5%;bottom: 4px;width: 101%;background: rgba(222, 125, 148, .5);position: absolute;z-index: 1;transition: all .25s ease;mix-blend-mode: multiply;}
+a::after {content: '';height: 2px;left: -.5%;bottom: 4px;width: 101%;background: rgba(222, 125, 148, .5);position: absolute;z-index: 1;transition: all .25s ease;mix-blend-mode: multiply;}
 
 a:hover::after {
     height: 100%;
