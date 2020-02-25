@@ -74,7 +74,7 @@ $( document ).ready(function() {
       var days = Math.floor(timeLeft / 86400); 
   
 
-      $("#days").html(days);
+      $("#days").html('0');
 
   }
   makeTimer();
